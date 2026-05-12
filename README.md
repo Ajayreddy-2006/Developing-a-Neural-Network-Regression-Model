@@ -44,24 +44,49 @@ Use the trained model to predict  for a new input value .
 
 ## PROGRAM
 
-### Name:
+### Name:T Ajay
 
-### Register Number:
+### Register Number:212223230007S
 
-```python
+```
 class NeuralNet(nn.Module):
-    def __init__(self):
+  def __init__(self):
         super().__init__()
-        #Include your code here
+
+        self.fc1 = nn.Linear(1, 10)
+        self.relu = nn.ReLU()
+        self.fc2 = nn.Linear(10, 1)
+        self.history = {'loss': []}
+
+  def forward(self, x):
+        x = self.fc1(x)
+        x = self.relu(x)
+        x = self.fc2(x)
+        return x
 
 
 
 # Initialize the Model, Loss Function, and Optimizer
-
+ai_brain = NeuralNet()
+criterion = nn.MSELoss()
+optimizer = optim.Adam(ai_brain.parameters(), lr=0.01)
 
 
 def train_model(ai_brain, X_train, y_train, criterion, optimizer, epochs=2000):
-    #Include your code here
+    # Write your code here
+    for epoch in range(epochs):
+        # Forward pass
+        outputs = ai_brain(X_train)
+        loss = criterion(outputs, y_train)
+
+        # Backward and optimize
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+        ai_brain.history['loss'].append(loss.item())
+        if epoch % 200 == 0:
+            print(f'Epoch [{epoch}/{epochs}], Loss: {loss.item():.6f}')
 
 ```
 
