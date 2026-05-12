@@ -46,7 +46,7 @@ Use the trained model to predict  for a new input value .
 
 ### Name:T Ajay
 
-### Register Number:212223230007S
+### Register Number:212223230007
 
 ```
 import torch
@@ -129,7 +129,9 @@ print(f'Prediction: {prediction}')
 
 ### Dataset Information
 ### OUTPUT
-<img width="180" height="263" alt="image" src="https://github.com/user-attachments/assets/5b85226c-7b25-445a-b720-7003c9b4e7d2" />
+
+<img width="281" height="43" alt="image" src="https://github.com/user-attachments/assets/1aaed849-e986-4ad3-9c46-6c857ffdd5b3" />
+
 
 
 ### Training Loss Vs Iteration Plot
