@@ -5,7 +5,88 @@ To develop a neural network regression model for the given dataset.
 
 ## THEORY
 
-The objective of this experiment is to design, implement, and evaluate a Deep Learning–based Neural Network regression model to predict a continuous output variable from a given set of input features. The task is to preprocess the data, construct a neural network regression architecture, train the model using backpropagation and gradient descent, and evaluate its performance using appropriate regression metrics such as Mean Squared Error (MSE), Mean Absolute Error (MAE), and R² score.
+## THEORY
+
+### Problem Statement
+
+We want to build a regression model using a feedforward neural network. The task is to learn the mapping between input features and continuous target values. Unlike classification problems (where outputs are discrete classes), regression problems aim to predict real-valued outcomes, such as prices, measurements, or any other numerical data.
+
+##### Neural Network Model Explanation
+#### 1. Architecture
+
+The model is a fully connected feedforward neural network implemented in PyTorch. It consists of:
+
+Input layer (1 neuron) → accepts a single feature as input.
+
+Hidden Layer 1 (6 neurons) → fully connected layer with ReLU activation.
+
+Hidden Layer 2 (12 neurons) → fully connected layer with ReLU activation.
+
+Hidden Layer 3 (20 neurons) → fully connected layer with ReLU activation.
+
+Output Layer (1 neuron) → produces the final prediction (continuous value).
+
+#### The flow of data is:
+
+Input → Linear(1→6) → ReLU → Linear(6→12) → ReLU 
+      → Linear(12→20) → ReLU → Linear(20→1) → Output
+
+#### 2. Activation Function
+
+ReLU (Rectified Linear Unit) is used in the hidden layers.
+
+ReLU introduces non-linearity, helping the network learn complex patterns.
+
+It avoids issues like the vanishing gradient problem that can occur with sigmoid/tanh.
+
+#### 3. Loss Function
+
+Mean Squared Error (MSELoss) is used.
+
+MSE is the standard loss for regression problems.
+
+It penalizes larger errors more strongly, encouraging the model to minimize prediction errors.
+
+#### 4. Optimizer
+
+RMSprop (Root Mean Square Propagation) is chosen as the optimizer.
+
+RMSprop adapts the learning rate for each parameter individually, which makes it more stable.
+
+It is widely used for training deep neural networks when data is noisy or gradients fluctuate.
+
+#### 5. Training History
+
+The model also keeps track of training loss values in self.history['loss'], which can be useful for visualization and analysis after training.
+
+Theory Behind the Model
+
+Neural networks are universal function approximators, meaning they can model complex relationships between inputs and outputs if given enough neurons and layers.
+
+Linear Layers (nn.Linear) perform weighted sums of inputs plus a bias.
+
+Mathematically: 
+y=Wx+b
+
+where 
+W is the weight matrix, 
+x is input, and 
+b is bias.
+
+##### ReLU Activation introduces non-linearity:
+ReLU(x)=max(0,x)
+
+##### Backpropagation & Gradient Descent:
+
+The model learns by minimizing the loss function.
+
+Gradients of the loss w.r.t. weights are computed using backpropagation.
+
+Optimizer updates the weights to reduce error iteratively.
+
+## Neural Network Model
+
+<img width="1071" height="756" alt="image" src="https://github.com/user-attachments/assets/71da9f99-d098-4be1-8e30-b724db9ce93f" />
 
 ## Neural Network Model
 <img width="1095" height="745" alt="542725068-a10c57a4-bf02-4043-9a23-10da995e3d1c" src="https://github.com/user-attachments/assets/0afe7f51-a91e-4dc0-a799-bfc3ff7ad5b1" />
