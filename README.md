@@ -88,8 +88,7 @@ Optimizer updates the weights to reduce error iteratively.
 
 <img width="1071" height="756" alt="image" src="https://github.com/user-attachments/assets/71da9f99-d098-4be1-8e30-b724db9ce93f" />
 
-## Neural Network Model
-<img width="1095" height="745" alt="542725068-a10c57a4-bf02-4043-9a23-10da995e3d1c" src="https://github.com/user-attachments/assets/0afe7f51-a91e-4dc0-a799-bfc3ff7ad5b1" />
+
 
 ## DESIGN STEPS
 ### STEP 1: 
